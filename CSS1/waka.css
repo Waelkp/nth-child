@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-tap-highlight-color: transparent ;
+}
+h1 {
+  text-align: left;
+  text-indent: 10px;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 370px;
+  border: 1px solid #a0a0a0;
+  padding: 5px;
+  border-radius: 10px;
+}
+.box h1 span {
+  color: #825efb;
+}
+.holder .box .circles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.holder .box .ci {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #825efb;
+  }
+}
+.holder .box .selectors {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.holder .box .selectors .a {
+  font-weight: bold;
+  border: 1px solid #aaa;
+  width: calc(52% - 30px);
+  margin: 10px;
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(130 94 251 / 30%);
+    border-color: #825efb;
+  }
+}
+label {
+  padding: 9px;
+}
+.toggle-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+}
+.toggle-swith {
+  font-weight: bold;
+  width: 160px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  &:hover {
+    background-color: rgb(130 94 251 / 30%);
+    border-color: #825efb;
+    box-shadow: 5px 5px 0 #130051;
+  }
+}
+.toggle-swith::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  left: -7px;
+  top: -45px;
+  z-index: -1;
+  transition: 0.3s;
+}
+.toggle-checkbox:checked + .toggle-swith {
+  background-color: #825efb;
+}
+.toggle-checkbox:checked + .toggle-swith::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.last-child {
+}
+.last-child::before {
+  left: 133px;
+}
+.child2::before {
+  top: -108px;
+  left: 34px;
+}
+.last-child2::before {
+  top: -108px;
+  left: 93px;
+}
+.chilodd::before {
+  top: -171px;
+  left: 73px;
+}
+.chileven::before {
+  top: -171px;
+  left: 53px;
+}
+.toggle-checkbox:checked + .chileven::before {
+  top: -171px;
+  left: 93px;
+}
+.n-4::before {
+  top: -234px;
+  left: 113px;
+}
+.n3-1::before {
+  top: -234px;
+  left: -26px;
+}
+.n3-10::before {
+  top: -297px;
+  left: 113px;
+}
+.n4::before {
+  top: -297px;
+  left: 15px;
+}
+.toggle-checkbox:checked + .n4::before {
+  left: -66px;
+}
+
+/* Hard Mood */
+.selectors:has(.odd input:checked) .first .first-child::before,
+.selectors:has(.odd input:checked) .five .n3-1::before,
+.selectors:has(.odd input:checked) .even .chileven::before,
+.selectors:has(.odd input:checked) .last .last-child::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.selectors:has(.even input:checked) .child2-l .child2::before,
+.selectors:has(.even input:checked) .four .n-4::before,
+.selectors:has(.even input:checked) .six .n4::before,
+.selectors:has(.even input:checked) .six .n4::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.selectors:has(.four input:checked) .five .n3-1::before,
+.selectors:has(.four input:checked) .six .n4::before,
+.selectors:has(.four input:checked) .last2-l .last-child2::before,
+.selectors:has(.four input:checked) .last .last-child::before,
+.selectors:has(.four input:checked) .even .chileven::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.selectors:has(.five input:checked) .child2-l .child2::before,
+.selectors:has(.five input:checked) .last2-l .last-child2::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.selectors:has(.the-forget input:checked) .even .chileven::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+.selectors:has(.six input:checked) .last2-l .last-child2::before {
+  background-color: #825efb;
+  z-index: 10;
+}
+
+/* End Hard Mood css */
